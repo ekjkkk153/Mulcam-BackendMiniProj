@@ -1,0 +1,61 @@
+html {
+	background: linear-gradient(to top, #e7e1c6 20%, rgb(219, 160, 83));
+	min-height: 100%;
+}
+
+body {
+	background: transparent;
+	font-family: 'Pretendard-Regular'
+}
+
+.btn {
+	background: rgb(219, 160, 83);
+	border: #8e6836 1px solid;
+	color: white;
+}
+
+a:link { color: rgb(219, 160, 83); text-decoration: none;}
+a:visited { color: black; text-decoration: none;}
+a:hover { color: blue; text-decoration: underline;}
+
+.btn:disabled {
+	background: rgb(160, 160, 160);
+	border: #8e8e8e 1px solid;
+}
+
+.maincontent {
+	width: 800px;
+	margin: 10px auto 40px auto;
+}
+
+.card {
+	float: left;
+}
+
+.title {
+	width: 120px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.mainpagetitle {
+	font-family: 'SBAggroB';
+}
+
+#carouselMain {
+	height: 400px;
+	background: black;
+}
+
+.carousel-item {
+	max-height: 400px;
+}
+
+.carousel-caption {
+	display: flex;
+	background: rgba(20, 20, 20, 0.25);
+}
+
+.carousel-item>img {
+	overflow: hidden;
+}

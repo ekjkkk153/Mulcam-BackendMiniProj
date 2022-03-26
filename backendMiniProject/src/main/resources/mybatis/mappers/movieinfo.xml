@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mulcam.backend.dao.MovieInfoDAO">
+	
+	<select id="queryMovie" resultType="MovieInfo" parameterType="int">
+		<![CDATA[
+			select * from movieinfo where mov_article_num=#{mov_article_num}
+		]]>
+	</select>
+	
+	<select id="queryMovieByTitle" resultType="MovieInfo" parameterType="String">
+		<![CDATA[
+			select * from movieinfo where mov_subject=#{mov_subject}
+		]]>
+	</select>
+	
+	<select id="queryAllMovie" resultType="MovieInfo">
+		<![CDATA[
+			select * from movieinfo order by mov_article_num
+		]]>
+		<!-- select mov_article_num as movienum,  
+			mov_subject as subject,
+			mov_date as date,
+			mov_content as content,
+			mov_filename as filename,
+			mov_youtube as youtube
+			from movieinfo order by movienum -->
+	</select>
+	
+	<insert id="insertMovie" parameterType="movieinfo">
+		<![CDATA[
+			insert into movieinfo(mov_content,mov_date,mov_filename,mov_subject,mov_youtube) 
+			values(#{mov_content},#{mov_date},#{mov_filename},#{mov_subject},#{mov_youtube})
+		]]>
+	</insert>
+	
+	<delete id="removeMovieByArticleNum" parameterType="int">
+		<![CDATA[
+			delete from movieinfo where mov_article_num={mov_article_num}
+		]]>
+	</delete>
+</mapper>
